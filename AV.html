@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlterVector | Solucions Digitals Dinàmiques</title>
+    <meta name="description" content="Presència digital professional per a negocis. Webs amb contingut dinàmic, gestionables de forma autònoma, optimitzades per a mòbil.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="Icon/logoAV.png">
+    <link rel="apple-touch-icon" href="Icon/logoAV.png">
+    <meta property="og:title" content="AlterVector | Solucions Digitals Dinàmiques">
+    <meta property="og:description" content="Presència digital professional per a negocis.">
+    <meta property="og:image" content="Icon/logoAV.png">
+    <meta property="og:type" content="website">
+
+    <style>
+
+        /* ─── RESET ─────────────────────────────────────────── */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        /* ─── VARIABLES ──────────────────────────────────────── */
+        :root {
+            --blau:        #1a3fff;
+            --cian:        #00cfff;
+            --blau-fosc:   #0d1f7a;
+            --text-fosc:   #1a2340;
+            --text-suau:   #4a5a7a;
+            --fons-clar:   #f5f8ff;
+            --fons-blanc:  #ffffff;
+            --border:      rgba(0, 150, 255, 0.15);
+        }
+
+        /* ─── BASE ───────────────────────────────────────────── */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            color: var(--text-fosc);
+            background: var(--fons-blanc);
+        }
+
+        a { text-decoration: none; color: inherit; }
+        a:hover { text-decoration: none; }
+        /*img { max-width: 100%; display: block; }*/
+
+
+        /* ════════════════════════════════════════════════════
+           HERO
+        ════════════════════════════════════════════════════ */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 500px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://avsets.pages.dev/images/altervector/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            animation: deriva 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes deriva {
+            0%   { transform: scale(1) translateX(0px); }
+            50%  { transform: scale(1.04) translateX(12px); }
+            100% { transform: scale(1.02) translateX(-8px); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                160deg,
+                rgba(5, 10, 40, 0.55) 0%,
+                rgba(10, 20, 80, 0.40) 50%,
+                rgba(0, 10, 50, 0.60) 100%
+            );
+        }
+
+        .hero-contingut {
+            position: relative;
+            z-index: 10;
+            padding: 20px;
+        }
+
+        .hero-logo {
+            height: 220px;
+            width: auto;
+            margin: 0 auto 24px auto;
+            filter: drop-shadow(0 4px 20px rgba(0, 180, 255, 0.4));
+        }
+
+        .hero-titol {
+            font-size: 1rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.75);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .hero-slogan {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.3;
+            margin-bottom: 36px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-boto {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--cian), var(--blau));
+            color: #ffffff;
+            padding: 14px 36px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .hero-boto:hover {
+            opacity: 0.85;
+            transform: translateY(-2px);
+        }
+
+
+        /* ════════════════════════════════════════════════════
+           SECCIONS GENERALS
+        ════════════════════════════════════════════════════ */
+        .seccio {
+            padding: 70px 24px;
+        }
+
+        .seccio-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .seccio-titol {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--blau-fosc);
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .seccio-titol span {
+            background: linear-gradient(135deg, var(--cian), var(--blau));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .seccio-subtitol {
+            font-size: 1rem;
+            color: var(--text-suau);
+            line-height: 1.7;
+            max-width: 640px;
+            margin-bottom: 48px;
+        }
+
+        .separador {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 0;
+        }
+
+
+        /* ════════════════════════════════════════════════════
+           QUÈ ÉS — fons clar
+        ════════════════════════════════════════════════════ */
+        .seccio-que {
+            background: var(--fons-clar);
+        }
+
+        .que-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .que-item {
+            background: var(--fons-blanc);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 28px 24px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .que-icona {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .que-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--blau-fosc);
+            margin-bottom: 6px;
+        }
+
+        .que-item p {
+            font-size: 0.9rem;
+            color: var(--text-suau);
+            line-height: 1.6;
+        }
+
+
+        /* ════════════════════════════════════════════════════
+           PORTFOLIO
+        ════════════════════════════════════════════════════ */
+        .seccio-portfolio {
+            background: var(--fons-blanc);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 28px;
+        }
+
+        .portfolio-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 80, 255, 0.12);
+        }
+
+        .portfolio-card-imatge {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #0d1f7a, #00cfff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .portfolio-card-text {
+            padding: 20px 22px;
+        }
+
+        .portfolio-card-text h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--blau-fosc);
+            margin-bottom: 6px;
+        }
+
+        .portfolio-card-text p {
+            font-size: 0.875rem;
+            color: var(--text-suau);
+            line-height: 1.6;
+        }
+
+        .portfolio-card-tag {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--cian);
+            border: 1px solid var(--cian);
+            padding: 3px 10px;
+            border-radius: 3px;
+        }
+
+
+        /* ════════════════════════════════════════════════════
+           CONTACTE
+        ════════════════════════════════════════════════════ */
+        .seccio-contacte {
+            background: var(--fons-clar);
+            text-align: center;
+        }
+
+        .contacte-boto {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--cian), var(--blau));
+            color: #ffffff;
+            padding: 16px 44px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: opacity 0.2s, transform 0.2s;
+            margin-top: 8px;
+        }
+
+        .contacte-boto:hover {
+            opacity: 0.85;
+            transform: translateY(-2px);
+        }
+
+
+        /* ════════════════════════════════════════════════════
+           FOOTER
+        ════════════════════════════════════════════════════ */
+        .footer {
+            background: var(--blau-fosc);
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 28px 20px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer a {
+            color: var(--cian);
+        }
+
+
+        /* ════════════════════════════════════════════════════
+           MODAL PORTFOLIO
+        ════════════════════════════════════════════════════ */
+        #modal-projecte {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 10, 40, 0.85);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .modal-caixa {
+            background: var(--fons-blanc);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 680px;
+            padding: 36px 32px;
+            position: relative;
+        }
+
+        .modal-tancar {
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: #aaa;
+            line-height: 1;
+        }
+
+        .modal-tancar:hover { color: var(--blau); }
+
+        .modal-titol {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--blau-fosc);
+            margin-bottom: 6px;
+        }
+
+        .modal-subtitol {
+            font-size: 0.85rem;
+            color: var(--text-suau);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .modal-desc {
+            font-size: 0.95rem;
+            color: var(--text-suau);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .modal-captures {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .modal-captures img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
+        .modal-link {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--cian), var(--blau));
+            color: white;
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: opacity 0.2s;
+        }
+
+        .modal-link:hover { opacity: 0.85; }
+
+
+        /* ════════════════════════════════════════════════════
+           RESPONSIVE
+        ════════════════════════════════════════════════════ */
+        @media (min-width: 600px) {
+            .que-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .portfolio-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .que-grid {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+            .portfolio-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .hero-slogan {
+                font-size: 2.4rem;
+            }
+            .hero-logo {
+                height: 110px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════ -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-contingut">
+            <img class="hero-logo"
+                src="https://avsets.pages.dev/logo/logoAVtrans.png"
+                alt="AlterVector">
+            <p class="hero-titol">Solucions Digitals Dinàmiques</p>
+            <h1 class="hero-slogan">El teu negoci,<br>visible i al dia</h1>
+            <a href="#portfolio" class="hero-boto">Veure projectes</a>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         QUÈ ÉS ALTERVECTOR
+    ═══════════════════════════════════════════ -->
+    <section class="seccio seccio-que" id="que-es">
+        <div class="seccio-inner">
+            <h2 class="seccio-titol">Què és <span>AlterVector</span></h2>
+            <p class="seccio-subtitol">Creem webs professionals per a petits negocis i autònoms que volen ser presents a internet sense complicacions. Ràpides, clares i gestionables de forma autònoma.</p>
+
+            <div class="que-grid">
+
+                <div class="que-item">
+                    <div class="que-icona">🌐</div>
+                    <div>
+                        <h3>Presència digital</h3>
+                        <p>Una web professional, accessible des de qualsevol dispositiu, que representa el teu negoci les 24h.</p>
+                    </div>
+                </div>
+
+                <div class="que-item">
+                    <div class="que-icona">📋</div>
+                    <div>
+                        <h3>Contingut dinàmic</h3>
+                        <p>Cartes, catàlegs, serveis o productes. El contingut s'actualitza en temps real sense tocar codi.</p>
+                    </div>
+                </div>
+
+                <div class="que-item">
+                    <div class="que-icona">⚙️</div>
+                    <div>
+                        <h3>Gestió autònoma</h3>
+                        <p>Panel d'administració inclòs. Tu mateix pots afegir, modificar o eliminar contingut quan vulguis.</p>
+                    </div>
+                </div>
+
+                <div class="que-item">
+                    <div class="que-icona">📱</div>
+                    <div>
+                        <h3>Optimitzada per mòbil</h3>
+                        <p>Dissenyada primer per a mòbil. Els teus clients la veuran perfecta des de qualsevol pantalla.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <hr class="separador">
+
+
+    <!-- ═══════════════════════════════════════════
+         PORTFOLIO
+    ═══════════════════════════════════════════ -->
+    <section class="seccio seccio-portfolio" id="portfolio">
+        <div class="seccio-inner">
+            <h2 class="seccio-titol">Projectes <span>destacats</span></h2>
+            <p class="seccio-subtitol">Alguns dels negocis que ja confien en AlterVector per a la seva presència digital.</p>
+
+            <div class="portfolio-grid">
+
+                <div class="portfolio-card" onclick="obrirModal('agora')">
+                    <div class="portfolio-card-imatge" style="background: linear-gradient(135deg, #1d0047, #2c3e35);">
+                        àgora
+                    </div>
+                    <div class="portfolio-card-text">
+                        <h3>Àgora Restaurant</h3>
+                        <p>Carta digital dinàmica amb menús diaris, carta completa, vins i còctels. Panel d'administració inclòs.</p>
+                        <span class="portfolio-card-tag">Restauració</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" onclick="obrirModal('oleyaji')">
+                    <div class="portfolio-card-imatge" style="background: linear-gradient(135deg, #7b1a1a, #c8973a);">
+                        olé y ají
+                    </div>
+                    <div class="portfolio-card-text">
+                        <h3>Olé y Ají Gastronomia</h3>
+                        <p>Web de restaurant amb galeria de plats, fotos i descripcions. Gestió de contingut amb imatges.</p>
+                        <span class="portfolio-card-tag">Restauració</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <hr class="separador">
+
+
+    <!-- ═══════════════════════════════════════════
+         CONTACTE
+    ═══════════════════════════════════════════ -->
+    <section class="seccio seccio-contacte" id="contacte">
+        <div class="seccio-inner">
+            <h2 class="seccio-titol">Parlem-ne</h2>
+            <p class="seccio-subtitol" style="margin: 0 auto 32px auto; text-align: center;">
+                Tens un negoci i vols ser present a internet? Explica'ns el teu projecte i et diem com podem ajudar-te.
+            </p>
+            <a href="mailto:suport@altervector.com" class="contacte-boto">Contactar</a>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════ -->
+    <footer class="footer">
+        AlterVector · Solucions Digitals Dinàmiques ·
+        <a href="mailto:suport@altervector.com">suport@altervector.com</a>
+    </footer>
+
+
+    <!-- ═══════════════════════════════════════════
+         MODAL PROJECTE
+    ═══════════════════════════════════════════ -->
+    <div id="modal-projecte">
+        <div class="modal-caixa">
+            <button class="modal-tancar" onclick="tancarModal()">✕</button>
+            <div id="modal-contingut"></div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════
+         JS
+    ═══════════════════════════════════════════ -->
+    <script>
+
+        // ─── DADES DELS PROJECTES ────────────────────────────
+        const PROJECTES = {
+
+            agora: {
+                titol:    "Àgora Restaurant",
+                subtitol: "Restauració · Terrassa",
+                desc:     "Carta digital completa per a l'Àgora Restaurant. Inclou menú diari, menú de grups, carta, vins i còctels. Tot el contingut és gestionable de forma autònoma des del panel d'administració, sense necessitat de tocar codi ni contactar amb cap tècnic.",
+                captures: [],
+                link:     "https://agora.altervector.com",
+                linkText: "Visitar la web"
+            },
+
+            oleyaji: {
+                titol:    "Olé y Ají Gastronomia",
+                subtitol: "Restauració",
+                desc:     "Web de restaurant amb catàleg de plats, fotos i descripcions. El propietari pot afegir o modificar plats, canviar fotos i actualitzar preus directament des del panel d'administració.",
+                captures: [],
+                link:     "https://oleyaji.altervector.com",
+                linkText: "Visitar la web"
+            }
+
+        };
+
+        // ─── OBRIR MODAL ─────────────────────────────────────
+        const obrirModal = (id) => {
+            const p = PROJECTES[id];
+            if (!p) return;
+
+            const capturesHtml = p.captures.length > 0
+                ? `<div class="modal-captures">
+                    ${p.captures.map(src => `<img src="${src}" alt="">`).join('')}
+                   </div>`
+                : '';
+
+            document.getElementById('modal-contingut').innerHTML = `
+                <p class="modal-subtitol">${p.subtitol}</p>
+                <h2 class="modal-titol">${p.titol}</h2>
+                <p class="modal-desc">${p.desc}</p>
+                ${capturesHtml}
+                <a href="${p.link}" target="_blank" class="modal-link">${p.linkText}</a>
+            `;
+
+            document.getElementById('modal-projecte').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        };
+
+        // ─── TANCAR MODAL ─────────────────────────────────────
+        const tancarModal = () => {
+            document.getElementById('modal-projecte').style.display = 'none';
+            document.body.style.overflow = '';
+        };
+
+        // Tancar clicant fora de la caixa
+        document.getElementById('modal-projecte').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('modal-projecte')) tancarModal();
+        });
+
+        // Tancar amb Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') tancarModal();
+        });
+
+    </script>
+
+</body>
+</html>
