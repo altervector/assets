@@ -15,6 +15,13 @@
 
     <style>
 
+        @font-face {
+        font-family: 'Comfortaa';
+        src: url('https://avsets.pages.dev/fonts/Comfortaa-Bold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+        }
+
         /* ─── RESET ─────────────────────────────────────────── */
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -28,6 +35,7 @@
             --fons-clar:   #f5f8ff;
             --fons-blanc:  #ffffff;
             --border:      rgba(0, 150, 255, 0.15);
+            --font-agora:    ;
         }
 
         html { scroll-behavior: smooth; }
@@ -148,6 +156,10 @@
             color: var(--blau-fosc);
             margin-bottom: 12px;
             letter-spacing: 1px;
+        }
+
+        .font-agora{
+            font-family:'Comfortaa', sans-serif;
         }
 
         .seccio-titol span {
@@ -547,7 +559,7 @@
                         àgora
                     </div>
                     <div class="portfolio-card-text">
-                        <h3>Àgora Restaurant</h3>
+                        <h3 class="font-agora">ágora Restaurant</h3>
                         <p>Carta digital dinàmica amb menús diaris, carta completa, vins i còctels. Panel d'administració inclòs.</p>
                         <span class="portfolio-card-tag">Restauració</span>
                     </div>
