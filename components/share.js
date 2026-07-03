@@ -56,7 +56,7 @@ class ShareBtn extends HTMLElement {
 
     <!-- DIV 2 — fons fix amb icones -->
     <div class="share-fons">
-                        <a href="mailto:${window.CONFIG.EMAIL}"><img src="${window.CONFIG.ASSETS}icon/Icomail.png" alt="Instagram" class="icona-app"> ${CONFIG.EMAIL}</a>
+                        <a href="mailto:${CONFIG.EMAIL}"><img src="${CONFIG.ASSETS}icon/Icomail.png" alt="Instagram" class="icona-app"> ${CONFIG.EMAIL}</a>
 
         <a href="#">IG</a>
         <a href="#">G</a>
