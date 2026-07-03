@@ -56,7 +56,6 @@ class ShareBtn extends HTMLElement {
 
     <!-- DIV 2 — fons fix amb icones -->
     <div class="share-fons">
-        
         <a href="#">IG</a>
         <a href="#">G</a>
     </div>
