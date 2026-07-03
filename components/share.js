@@ -50,13 +50,20 @@ class ShareBtn extends HTMLElement {
 .share-cortina.obert {
     width: 0;
 }
+.share-icona {
+width: 20px;
+height: auto;
+vertical-align: middle;
+margin-right: 8px;
+display: inline-block;
+}
 </style>
 
 <div class="share-wrap">
 
     <!-- DIV 2 — fons fix amb icones -->
     <div class="share-fons">
-        <a href="mailto:${CONFIG.EMAIL}"><img src="${CONFIG.ASSETS}icon/Icomail.png" alt="Instagram" ></a>
+        <a href="mailto:${CONFIG.EMAIL}"><img src="${CONFIG.ASSETS}icon/Icomail.png" alt="Instagram" class="share-icona"></a>
         <a href="#">IG</a>
         <a href="#">G</a>
     </div>
