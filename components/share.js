@@ -44,7 +44,7 @@ class ShareBtn extends HTMLElement {
     transform-origin: left center;
     transition: width 0.5s ease;
     overflow: hidden;
-    width: 160px;
+    width: 200px;
 }
 
 .share-cortina.obert {
