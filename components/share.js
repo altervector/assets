@@ -64,6 +64,7 @@ display: inline-block;
     <!-- DIV 2 — fons fix amb icones -->
     <div class="share-fons">
         <a href="mailto:${CONFIG.EMAIL}"><img src="${CONFIG.ASSETS}icon/Icomail.png" alt="Mail" class="share-icona"></a>
+        <a href="${CONFIG.WHATSAPP}" target="_blank" class="share-icona"></a>
         <a href="${CONFIG.INSTAGRAM}" target="_blank"><img src="${CONFIG.ASSETS}icon/Icoinsta.png" alt="Instagram" class="share-icona"></a>
     </div>
 
