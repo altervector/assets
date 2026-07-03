@@ -6,7 +6,6 @@ class ShareBtn extends HTMLElement {
     position: relative;
     width: 160px;
     height: 48px;
-        border: 2px solid #f97316; /*xxx*/
 }
 
 /* DIV 2 — sempre visible, a sota */
