@@ -56,7 +56,9 @@ class ShareBtn extends HTMLElement {
 
     <!-- DIV 2 — fons fix amb icones -->
     <div class="share-fons">
-        <a href="#">WA</a>
+        <a href="https://wa.me/${CONFIG.TELEFON}" target="_blank">
+        <img src="${CONFIG.ASSETS}icon/Icowhatsapp.png" alt="WhatsApp" class="icona-app">
+        </a>
         <a href="#">IG</a>
         <a href="#">G</a>
     </div>
