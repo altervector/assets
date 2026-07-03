@@ -4,7 +4,7 @@ class ShareBtn extends HTMLElement {
 <style>
 .share-wrap {
     position: relative;
-    width: 160px;
+    width: 200px;
     height: 48px;
 }
 
@@ -66,7 +66,9 @@ display: inline-block;
         <a href="mailto:${CONFIG.EMAIL}"><img src="${CONFIG.ASSETS}icon/Icomail.png" alt="Mail" class="share-icona"></a>
         <a href="${CONFIG.WHATSAPP}" target="_blank"><img src="${CONFIG.ASSETS}icon/Icowhats.png" alt="Whats" class="share-icona"></a>
         <a href="${CONFIG.INSTAGRAM}" target="_blank"><img src="${CONFIG.ASSETS}icon/Icoinsta.png" alt="Instagram" class="share-icona"></a>
-    </div>
+        <a href="${CONFIG.URL_RESSENYES}" target="_blank"><img src="${CONFIG.ASSETS}icon/google.png" alt="Google" class="share-icona">
+</a>
+        </div>
 
     <!-- DIV 1 — cortina de color -->
     <div class="share-cortina" id="cortina">
